@@ -5,6 +5,9 @@
 {% endblock %}
 
 {% block body %}
+    {% if error %}
+        <div class="alert alert-danger">{{ error }}</div>
+    {% endif %}
     <form action="{% url 'encyclopedia:create' %}" method="POST">
         {% csrf_token %}
         <label for="t">Name:</label><br>

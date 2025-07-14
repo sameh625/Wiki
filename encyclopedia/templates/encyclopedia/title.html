@@ -14,5 +14,7 @@
     {% else %}
         <p>{{ content|safe }}</p>
     {% endif %}
-    <a href="{% url 'encyclopedia:edit' title %}">Edit Page</a>
+    {%if content is not None%}
+        <a href="{% url 'encyclopedia:edit' title %}">Edit Page</a>
+    {%endif%}
 {% endblock %}
